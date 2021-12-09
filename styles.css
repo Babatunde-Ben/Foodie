@@ -9,6 +9,10 @@ body {
   background-color: #ede5df;
   /* max-height: 100vh; */
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .nav-header {
   width: 100%;
   background: linear-gradient(to right, rgb(255, 128, 59), rgb(255, 179, 37));
@@ -111,6 +115,7 @@ nav ul li {
   margin-right: 1rem;
   margin-bottom: 2rem;
   padding: 1rem 0.5rem;
+  height: 400px;
 }
 .food-container:hover {
   transform: translateY(-5px);
@@ -135,8 +140,17 @@ nav ul li {
   font-size: 0.8rem;
   text-align: center;
   color: #747474;
-  margin: 0.7rem 0;
+  margin: 1rem 0 0.7rem 0;
   width: 100%;
+  font-weight: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+.redirect {
+  color: rgb(24, 54, 114);
   font-weight: normal;
 }
 
@@ -150,6 +164,24 @@ nav ul li {
   font-size: 1rem;
   color: #acacac;
 }
+
+.eli {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  background-color: rgb(202, 190, 190);
+  padding: 2rem;
+}
+.eli p {
+  overflow: hidden;
+  /* white-space: nowrap; */
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  color: red;
+}
+
 @media screen and (max-width: 700px) {
   .nav-header {
     padding: 1rem 1rem;

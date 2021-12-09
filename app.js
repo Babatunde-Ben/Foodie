@@ -12,25 +12,27 @@ function fetchFood() {
     });
 }
 
-// fetchFood();
+// generate food from spononacular API below here
 
-// generate food from spononacular API here
-
-// window.addEventListener("DOMContentLoaded", fetchFood);
+window.addEventListener("DOMContentLoaded", fetchFood);
 
 function generateFood(fetchArray) {
   const content = fetchArray.map(function (item) {
-    return ` <div class="food-container">
+    const { image, name, link, content } = item;
+
+    return ` <a href="${link}"><div class="food-container">
     <img
-      src="${item.image}"
+      src="${image}"
       class="img"
-      alt="${item.name}"
+      alt="${name}"
     />
-    <h2 class="food-title">${item.name}</h2>
+    <h2 class="food-title">${name}</h2>
     <p class="desc">
-    ${item.content.slice(0, 105)} ...<a href="${item.link}"> Read more</a>
+    ${content} 
     </p>
-  </div>`;
+  </div></a>
+  
+  `;
   });
   container.innerHTML = content.join("");
 }
