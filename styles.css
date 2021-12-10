@@ -15,7 +15,7 @@ a {
 }
 .nav-header {
   width: 100%;
-  background: linear-gradient(to right, rgb(255, 128, 59), rgb(255, 179, 37));
+  background: linear-gradient(to right, #ff803b, #ffb325);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,7 +47,6 @@ nav ul li {
   font-weight: 600;
   padding: 10px 5px;
   position: relative;
-  /* background-color: rgba(255, 255, 0, 0.548); */
 }
 .nav-links:hover {
   color: #f3edea;
@@ -65,8 +64,14 @@ nav ul li {
 .nav-links:hover > span {
   left: 0;
 }
-.nav-header .menu-bar {
+.nav-header i {
   font-size: 1.8rem;
+  cursor: pointer;
+}
+.nav-header .menu-bar {
+  display: none;
+}
+.nav-header .close {
   display: none;
 }
 
@@ -186,7 +191,6 @@ nav ul li {
   .nav-header {
     padding: 1rem 1rem;
   }
-
   .nav-header .logo {
     font-size: 1.5rem;
   }
@@ -195,8 +199,63 @@ nav ul li {
     font-size: 20px;
     display: inline-block;
   }
-  .nav-header nav {
+  nav {
+    position: fixed;
+    /* display: none; */
+    /* background: linear-gradient(rgb(70, 60, 42), #8d610f); */
+    background-color: rgb(63, 63, 63);
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding: 2rem 0;
+    transition: right 0.4s;
+  }
+  nav ul {
+    list-style: none;
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    /* background-color: red; */
+  }
+  nav ul li {
+    display: block;
+    /* background-color: red; */
+    text-align: center;
+    margin-right: 20px;
+    text-transform: capitalize;
+    overflow: hidden;
+    padding: 8px 5px;
+    margin: 2rem 0;
+  }
+  .nav-links {
+    display: inline-block;
+    padding: 1rem 4rem;
+    color: rgb(202, 202, 202);
+  }
+  .nav-links > span {
     display: none;
+  }
+  .nav-header .close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 12;
+    color: #fff;
+    display: block;
+  }
+  .show-link {
+    /* display: block; */
+    right: 0;
+  }
+  .show-link .close {
+    display: block;
+    color: rgb(202, 202, 202);
+    transition: transform 0.4s;
+  }
+  .close:hover {
+    transform: rotate(90deg);
   }
   .section-center {
     padding: 28px 70px;

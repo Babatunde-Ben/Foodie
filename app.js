@@ -14,7 +14,7 @@ function fetchFood() {
 
 // generate food from spononacular API below here
 
-window.addEventListener("DOMContentLoaded", fetchFood);
+// window.addEventListener("DOMContentLoaded", fetchFood);
 
 function generateFood(fetchArray) {
   const content = fetchArray.map(function (item) {
@@ -37,6 +37,26 @@ function generateFood(fetchArray) {
   container.innerHTML = content.join("");
 }
 
+// JS for responsive navbar
+
+const openMenu = document.querySelector(".menu-bar");
+const closeMenu = document.querySelector(".close");
+const nav = document.querySelector(".nav-header nav");
+const navLinks = document.querySelectorAll(".nav-links");
+console.log(navLinks);
+
+openMenu.addEventListener("click", () => {
+  nav.classList.add("show-link");
+});
+closeMenu.addEventListener("click", (e) => {
+  nav.classList.remove("show-link");
+});
+
+navLinks.forEach((item) => {
+  item.addEventListener("click", () => {
+    nav.classList.remove("show-link");
+  });
+});
 // JS for footer
 
 const currentYear = new Date().getFullYear();
