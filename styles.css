@@ -79,16 +79,51 @@ nav ul li {
   max-width: 1050px;
   margin: 0 auto;
 }
-.preloader {
-  height: 40vh;
+.catalogue-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
 }
-.section-center .title {
+.search-form {
+  width: 18.5rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  /* background-color: green; */
+}
+.search-form .search-box {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  /* margin-right: 10px; */
+  background: none;
+  outline: none;
+  border: 2px solid rgb(131, 131, 131);
+  /* border-radius: 5px; */
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+}
+.search-btn {
+  background-color: #ff9100;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 600;
+  display: inline-block;
+  /* border-radius: 3px; */
+  border: none;
+  height: 100%;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-family: Poppins, sans-serif;
+}
+.title {
   display: inline-block;
   text-transform: capitalize;
   color: #333;
   font-size: 1.57em;
   padding-bottom: 1rem;
-  margin-bottom: 2.5rem;
   position: relative;
 }
 
@@ -119,7 +154,7 @@ nav ul li {
   margin-right: 1rem;
   margin-bottom: 2rem;
   padding: 1rem 0.5rem;
-  height: 400px;
+  height: 430px;
 }
 .food-container:hover {
   transform: translateY(-5px);
@@ -139,6 +174,11 @@ nav ul li {
   margin: 0.2rem 0;
   text-align: center;
   font-size: 1.4rem;
+  overflow: hidden;
+  display: -webkit-box;
+  /* text-overflow: ellipsis; */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 .food-container .desc {
   font-size: 0.8rem;
@@ -160,22 +200,55 @@ nav ul li {
 }
 
 .footer {
+  width: 100vw;
   text-align: center;
   background-color: #333;
   height: 20vh;
   line-height: 20vh;
+  /* position: fixed;
+  bottom: 0;
+  left: 0; */
 }
 .footer p {
   font-size: 1rem;
   color: #acacac;
 }
+.preloader {
+  position: relative;
+  overflow: hidden;
+}
+.preloader img {
+  width: 100%;
+}
+.preloader::after {
+  content: "";
+  position: absolute;
+  background-color: #ede5df;
+  width: 100%;
+  height: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: move 1s infinite;
+}
+@keyframes move {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
 
-/* about page */
+/* -------- about page -------- */
+
 .content {
   color: #666666;
   line-height: 1.8rem;
 }
 .sub-section {
+  margin-bottom: 3.5rem;
+}
+.contact-section .title {
   margin-bottom: 3rem;
 }
 .contact {
@@ -281,11 +354,16 @@ nav ul li {
   .section-center {
     padding: 28px 70px;
   }
+  .search-form {
+    width: 100%;
+  }
   .section-center .title {
     font-size: 1.5rem;
-    padding-bottom: 0.8rem;
     margin: 0 auto 2rem auto;
     max-width: 200px;
+  }
+  .search-form {
+    margin: 0 auto;
   }
   .food-container {
     flex-basis: 80%;

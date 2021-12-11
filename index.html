@@ -27,9 +27,7 @@
             <li>
               <a href="./index.html" class="nav-links">home <span></span></a>
             </li>
-            <li>
-              <a href="./recipe.html" class="nav-links">recipe <span></span></a>
-            </li>
+
             <li>
               <a href="./about.html" class="nav-links">about <span></span></a>
             </li>
@@ -40,9 +38,19 @@
       <i class="fas fa-bars menu-bar"></i>
     </div>
     <section class="section-center">
-      <h2 class="title">food catalogue</h2>
+      <div class="catalogue-title">
+        <h2 class="title">food catalogue</h2>
+        <form class="search-form">
+          <input
+            type="text"
+            class="search-box"
+            placeholder="Search by recipe e.g, rice, beans"
+          />
+          <button type="submit" class="search-btn">search</button>
+        </form>
+      </div>
       <div class="container">
-        <div class="food-container">
+        <!-- <div class="food-container">
           <img src="./images/item-1.jpeg" class="img" alt="food item" />
           <h2 class="food-title">Title</h2>
           <p class="desc">
@@ -162,19 +170,20 @@
             voluptatem facere temporibus ut porro. Asperiores earum veniam
             temporibus!
           </p>
+        </div> -->
+        <div class="preloader">
+          <img src="./images/pre-loader.svg" alt="preloader" />
         </div>
-
-        <!-- <img src="./images/preloader.gif" class="preloader" alt="preloader" /> -->
       </div>
     </section>
 
     <footer class="footer">
       <p>
-        Lorem ipsum dolor sit amet. &copy; <span class="year"></span> || Adeniyi
-        Babatunde
+        Lorem sit amet. &copy; <span class="year"></span> || Adeniyi Babatunde
       </p>
     </footer>
 
     <script src="./app.js"></script>
+    <script src="./search.js"></script>
   </body>
 </html>

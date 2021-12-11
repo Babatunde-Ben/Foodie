@@ -1,26 +1,28 @@
 const container = document.querySelector(".container");
-
-function fetchFood() {
-  fetch(
-    `https://api.spoonacular.com/food/search?query=pineapple&number=9&apiKey=838b6353edcb4753a360558332db1166`
-  )
+let url = `https://api.spoonacular.com/food/search?query=rice&number=9&apiKey=838b6353edcb4753a360558332db1166`;
+function fetchFood(url) {
+  fetch(url)
     .then((res) => res.json())
     .then((data) => {
       const result = data.searchResults[0].results;
       console.log(result);
       generateFood(result);
+    })
+    .catch((error) => {
+      console.log(error);
     });
 }
 
 // generate food from spononacular API below here
 
-// window.addEventListener("DOMContentLoaded", fetchFood);
+window.addEventListener("DOMContentLoaded", fetchFood(url));
+// window.addEventListener("load", fetchFood(url));
 
 function generateFood(fetchArray) {
   const content = fetchArray.map(function (item) {
     const { image, name, link, content } = item;
 
-    return ` <a href="${link}"><div class="food-container">
+    return ` <a href="${link}" target="_blank"><div class="food-container">
     <img
       src="${image}"
       class="img"
@@ -43,7 +45,6 @@ const openMenu = document.querySelector(".menu-bar");
 const closeMenu = document.querySelector(".close");
 const nav = document.querySelector(".nav-header nav");
 const navLinks = document.querySelectorAll(".nav-links");
-console.log(navLinks);
 
 openMenu.addEventListener("click", () => {
   nav.classList.add("show-link");
@@ -57,9 +58,9 @@ navLinks.forEach((item) => {
     nav.classList.remove("show-link");
   });
 });
+
 // JS for footer
 
 const currentYear = new Date().getFullYear();
 const year = document.querySelector(".year");
-// console.log(year);
 year.textContent = currentYear;
