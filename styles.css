@@ -19,7 +19,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   box-shadow: 0px 0px 15px black;
   margin-bottom: 1.8rem;
 }
@@ -36,7 +36,7 @@ nav ul {
   align-items: center;
 }
 nav ul li {
-  margin-right: 20px;
+  margin-right: 40px;
   text-transform: capitalize;
   overflow: hidden;
   padding: 8px 5px;
@@ -56,7 +56,6 @@ nav ul li {
   position: absolute;
   bottom: 2px;
   left: -110%;
-  /* display: inline-block; */
   height: 3px;
   background-color: #f3edea;
   transition: left 0.5s;
@@ -146,6 +145,7 @@ nav ul li {
   text-align: center;
   color: #747474;
   margin: 1rem 0 0.7rem 0;
+  padding: 0 0.4rem;
   width: 100%;
   font-weight: normal;
   overflow: hidden;
@@ -170,26 +170,52 @@ nav ul li {
   color: #acacac;
 }
 
-.eli {
-  display: block;
-  width: 300px;
-  margin: 0 auto;
-  background-color: rgb(202, 190, 190);
-  padding: 2rem;
+/* about page */
+.content {
+  color: #666666;
+  line-height: 1.8rem;
 }
-.eli p {
-  overflow: hidden;
-  /* white-space: nowrap; */
-  display: -webkit-box;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  color: red;
+.sub-section {
+  margin-bottom: 3rem;
+}
+.contact {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.contact-box {
+  flex-basis: 30%;
+  /* background-color: yellow; */
+  max-width: 280px;
+  margin-bottom: 2.4rem;
+}
+.contact-box .btn {
+  width: 50px;
+  height: 50px;
+  background-color: #f8f2f2;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 auto 1.7rem;
+}
+.contact-box .btn i {
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  color: #ff9100;
+  line-height: 50px;
+  font-size: 20px;
+}
+.contact-box p {
+  text-align: center;
+  color: #333;
+  font-size: 0.8rem;
 }
 
 @media screen and (max-width: 700px) {
   .nav-header {
     padding: 1rem 1rem;
+    position: relative;
+    /* overflow: hidden; */
   }
   .nav-header .logo {
     font-size: 1.5rem;
@@ -200,14 +226,12 @@ nav ul li {
     display: inline-block;
   }
   nav {
-    position: fixed;
-    /* display: none; */
-    /* background: linear-gradient(rgb(70, 60, 42), #8d610f); */
+    position: absolute;
     background-color: rgb(63, 63, 63);
     top: 0;
     right: -100%;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     z-index: 10;
     padding: 2rem 0;
     transition: right 0.4s;
@@ -217,11 +241,9 @@ nav ul li {
     display: block;
     margin: 0 auto;
     font-size: 18px;
-    /* background-color: red; */
   }
   nav ul li {
     display: block;
-    /* background-color: red; */
     text-align: center;
     margin-right: 20px;
     text-transform: capitalize;
@@ -246,7 +268,6 @@ nav ul li {
     display: block;
   }
   .show-link {
-    /* display: block; */
     right: 0;
   }
   .show-link .close {
@@ -263,24 +284,33 @@ nav ul li {
   .section-center .title {
     font-size: 1.5rem;
     padding-bottom: 0.8rem;
-    display: block;
     margin: 0 auto 2rem auto;
     max-width: 200px;
   }
   .food-container {
     flex-basis: 80%;
   }
+  .content {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+  }
+  .contact-box {
+    flex-basis: 100%;
+  }
+  .footer p {
+    font-size: 0.8rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .section-center {
-    padding: 28px 70px;
+    padding: 28px 20px;
   }
 
   .food-container {
     flex-basis: 100%;
   }
   .section-center .title {
-    font-size: 1rem;
+    font-size: 1.2rem;
     max-width: 180px;
   }
 }
