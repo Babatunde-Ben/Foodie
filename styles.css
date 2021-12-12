@@ -7,7 +7,7 @@
 body {
   font-family: Poppins, sans-serif;
   background-color: #ede5df;
-  /* max-height: 100vh; */
+  min-height: 100vh;
 }
 a {
   text-decoration: none;
@@ -97,11 +97,9 @@ nav ul li {
   width: 100%;
   height: 100%;
   padding: 10px;
-  /* margin-right: 10px; */
   background: none;
   outline: none;
   border: 2px solid rgb(131, 131, 131);
-  /* border-radius: 5px; */
   font-family: Poppins, sans-serif;
   font-size: 12px;
 }
@@ -111,7 +109,6 @@ nav ul li {
   text-transform: capitalize;
   font-weight: 600;
   display: inline-block;
-  /* border-radius: 3px; */
   border: none;
   height: 100%;
   padding: 6px 8px;
@@ -205,9 +202,6 @@ nav ul li {
   background-color: #333;
   height: 20vh;
   line-height: 20vh;
-  /* position: fixed;
-  bottom: 0;
-  left: 0; */
 }
 .footer p {
   font-size: 1rem;
@@ -216,9 +210,11 @@ nav ul li {
 .preloader {
   position: relative;
   overflow: hidden;
+  /* background-color: red; */
+  /* margin-bottom: 12rem; */
 }
 .preloader img {
-  width: 100%;
+  width: 120px;
 }
 .preloader::after {
   content: "";
@@ -229,6 +225,11 @@ nav ul li {
   top: 50%;
   transform: translateY(-50%);
   animation: move 1s infinite;
+}
+.waiting-text {
+  color: rgb(77, 77, 77);
+  transform: translateY(-30px);
+  font-weight: 600;
 }
 @keyframes move {
   0% {

@@ -16,7 +16,6 @@ function fetchFood(url) {
 // generate food from spononacular API below here
 
 window.addEventListener("DOMContentLoaded", fetchFood(url));
-// window.addEventListener("load", fetchFood(url));
 
 function generateFood(fetchArray) {
   const content = fetchArray.map(function (item) {
