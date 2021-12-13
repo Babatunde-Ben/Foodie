@@ -134,6 +134,13 @@ nav ul li {
   height: 0.25rem;
   background-color: #ff9100;
 }
+.search-result-text {
+  color: rgb(111, 111, 111);
+  font-size: 14px;
+  margin: 0 0 2rem 2rem;
+  text-align: left;
+  font-style: italic;
+}
 .container {
   display: flex;
   justify-content: space-around;
@@ -209,6 +216,12 @@ nav ul li {
 .footer p {
   font-size: 1rem;
   color: #acacac;
+}
+.waiting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .preloader {
   position: relative;
@@ -382,6 +395,12 @@ nav ul li {
   }
   .search-form {
     margin: 0 auto;
+  }
+  .search-result-text {
+    margin: 0;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
   }
   .food-container {
     flex-basis: 80%;
