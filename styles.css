@@ -199,9 +199,12 @@ nav ul li {
 .footer {
   width: 100vw;
   text-align: center;
+  line-height: 20vh;
   background-color: #333;
   height: 20vh;
-  line-height: 20vh;
+
+  position: sticky;
+  top: 100%;
 }
 .footer p {
   font-size: 1rem;
@@ -284,7 +287,21 @@ nav ul li {
   color: #333;
   font-size: 0.8rem;
 }
+.contact-form {
+  display: inline-block;
+  margin: 0 auto;
+  background-color: red;
+}
 
+/* set animation for status bar to view dynamically in javascript */
+/* set timeout for the status function */
+
+#status {
+  background-color: rgb(15, 187, 72);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
 @media screen and (max-width: 700px) {
   .nav-header {
     padding: 1rem 1rem;
@@ -376,8 +393,9 @@ nav ul li {
   .contact-box {
     flex-basis: 100%;
   }
-  .footer p {
-    font-size: 0.8rem;
+  .footer {
+    position: sticky;
+    top: 100%;
   }
 }
 @media screen and (max-width: 500px) {

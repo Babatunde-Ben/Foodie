@@ -1,10 +1,10 @@
 const container = document.querySelector(".container");
-let url = `https://api.spoonacular.com/food/search?query=rice&number=9&apiKey=838b6353edcb4753a360558332db1166`;
+let url = `https://api.spoonacular.com/recipes/random?number=9&tags=vegetarian&apiKey=838b6353edcb4753a360558332db1166`;
 function fetchFood(url) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      const result = data.searchResults[0].results;
+      const result = data.recipes;
       console.log(result);
       generateFood(result);
     })
@@ -13,23 +13,23 @@ function fetchFood(url) {
     });
 }
 
-// generate food from spononacular API below here
+// generate food from spononacular API
 
 window.addEventListener("DOMContentLoaded", fetchFood(url));
 
 function generateFood(fetchArray) {
   const content = fetchArray.map(function (item) {
-    const { image, name, link, content } = item;
+    const { image, title, spoonacularSourceUrl, summary } = item;
 
-    return ` <a href="${link}" target="_blank"><div class="food-container">
+    return ` <a href="${spoonacularSourceUrl}" target="_blank"><div class="food-container">
     <img
       src="${image}"
       class="img"
-      alt="${name}"
+      alt="${title}"
     />
-    <h2 class="food-title">${name}</h2>
+    <h2 class="food-title">${title}</h2>
     <p class="desc">
-    ${content} 
+    ${summary} 
     </p>
   </div></a>
   
