@@ -123,7 +123,6 @@ nav ul li {
   padding-bottom: 1rem;
   position: relative;
 }
-
 .title::after {
   content: " ";
   position: absolute;
@@ -136,7 +135,7 @@ nav ul li {
 }
 .search-result-text {
   color: rgb(111, 111, 111);
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 0 2rem 2rem;
   text-align: left;
   font-style: italic;
@@ -158,7 +157,8 @@ nav ul li {
   margin-right: 1rem;
   margin-bottom: 2rem;
   padding: 1rem 0.5rem;
-  height: 430px;
+  height: 445px;
+  height: auto;
 }
 .food-container:hover {
   transform: translateY(-5px);
@@ -188,15 +188,25 @@ nav ul li {
   font-size: 0.8rem;
   text-align: center;
   color: #747474;
-  margin: 1rem 0 0.7rem 0;
+  margin: 1rem 0 0 0;
   padding: 0 0.4rem;
   width: 100%;
   font-weight: normal;
-  overflow: hidden;
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.food-container .read-more {
+  padding: 0 0.4rem;
+  font-size: 0.8rem;
+  color: #747474;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  text-decoration: underline;
+  cursor: pointer;
 }
 .redirect {
   color: rgb(24, 54, 114);

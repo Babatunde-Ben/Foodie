@@ -29,8 +29,9 @@ function generateFood(fetchArray) {
     <h2 class="food-title">${title}</h2>
     <p class="desc">
     ${summary} 
-    </p>
-  </div></a>
+    </p><p class="read-more">Read more</p>
+  </div>
+  </a>
   
   `;
   });
@@ -69,7 +70,7 @@ function generateFoodSearch(fetchArray) {
     <h2 class="food-title">${name}</h2>
     <p class="desc">
     ${content} 
-    </p>
+    </p><p class="read-more">Read more</p>
   </div></a>
   
   `;
@@ -82,7 +83,6 @@ function generateFoodSearch(fetchArray) {
 const form = document.querySelector(".search-form");
 const searchBox = document.querySelector(".search-box");
 const searchResultText = document.querySelector(".search-result-text");
-// const searchResultValue = document.getElementById("search-result-value");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
