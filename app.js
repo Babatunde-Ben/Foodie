@@ -88,7 +88,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchValue = searchBox.value;
   const container = document.querySelector(".container");
-  searchResultText.innerHTML = `search results for "${searchValue}"...`;
+  searchResultText.innerHTML = `search results for "<b>${searchValue}</b>"...`;
   container.innerHTML = `<section class="waiting">
     <div class="preloader">
       <img src="./images/pre-loader.svg" alt="preloader" />

@@ -273,13 +273,12 @@ nav ul li {
   line-height: 1.8rem;
 }
 .sub-section {
-  margin-bottom: 3.5rem;
+  margin-bottom: 3.8rem;
 }
 .contact-section .title {
   margin-bottom: 3rem;
 }
 .contact {
-  /* background-color: red; */
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
@@ -287,7 +286,6 @@ nav ul li {
 }
 .contact-box {
   flex-basis: 30%;
-  /* background-color: yellow; */
   max-width: 280px;
   margin-bottom: 2.4rem;
 }
@@ -311,20 +309,91 @@ nav ul li {
   font-size: 0.8rem;
 }
 .contact-form {
-  display: inline-block;
+  max-width: 30rem;
+  display: block;
   margin: 0 auto;
-  background-color: red;
+  background-color: #f2ece6;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.227);
+  padding: 20px;
+}
+.contact-form .form-group {
+  padding-bottom: 20px;
+}
+.contact-form .form-group label {
+  color: rgb(68, 68, 68);
+  font-size: 14px;
+  text-transform: capitalize;
+  display: block;
+  padding-bottom: 5px;
+}
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  border: 1px solid rgb(211, 211, 211);
+  padding: 0.5rem;
+  background: rgb(245, 245, 245);
+  color: #333;
+  font-family: Poppins, sans-serif;
+}
+.contact-form .form-group input {
+  height: 35px;
+}
+.contact-form .form-group textarea {
+  resize: none;
+}
+.contact-form .submit-btn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 0.8rem;
+  background-color: #ff9100;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 600;
+  border: none;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-family: Poppins, sans-serif;
 }
 
 /* set animation for status bar to view dynamically in javascript */
 /* set timeout for the status function */
 
 #status {
-  background-color: rgb(15, 187, 72);
   color: #fff;
   text-align: center;
   width: 100%;
+  opacity: none;
+  font-size: 12px;
+  padding: 3px 0;
+  text-transform: capitalize;
+  opacity: 0;
 }
+
+.form-success {
+  background-color: rgb(15, 187, 72);
+  animation: status 3s ease;
+}
+.form-fail {
+  background-color: rgb(226, 39, 39);
+  animation: status 3s ease;
+}
+@keyframes status {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .nav-header {
     padding: 1rem 1rem;
