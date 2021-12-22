@@ -13,6 +13,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
@@ -20,7 +26,7 @@
   </head>
   <body>
     <div class="nav-header">
-      <h1 class="logo">Company logo</h1>
+      <h1 class="logo">Foodie</h1>
       <nav>
         <ul>
           <li>
@@ -80,7 +86,11 @@
       </article>
       <article class="sub-section">
         <h1 class="title">Leave a message</h1>
-        <form class="contact-form">
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/moqrqkdd"
+          method="POST"
+        >
           <div class="form-group">
             <label for="name">fullname</label>
             <input type="text" name="name" id="name" required />
@@ -100,7 +110,7 @@
             ></textarea>
           </div>
           <button type="submit" class="submit-btn">submit</button>
-          <div id="status" class="form-success">message delivered</div>
+          <div id="status">message delivered</div>
         </form>
       </article>
     </section>
@@ -110,6 +120,7 @@
         Lorem sit amet. &copy; <span class="year"></span> || Adeniyi Babatunde
       </p>
     </footer>
-    <script src="./app.js"></script>
+    <!-- <script src="./app.js"></script> -->
+    <script src="./form.js"></script>
   </body>
 </html>
