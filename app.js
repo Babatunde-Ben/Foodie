@@ -8,7 +8,7 @@ function fetchFood(url) {
     .then((res) => res.json())
     .then((data) => {
       const result = data.recipes;
-      console.log(result);
+      // console.log(result);
       generateFood(result);
     })
     .catch((error) => {
@@ -49,9 +49,13 @@ function fetchFoodSearch(url) {
     .then((res) => res.json())
     .then((data) => {
       const searchResult = data.searchResults[0].results;
-      // const result = data.recipes;
+      if (searchResult.length === 0) {
+        console.log(`empty search`);
+        container.innerHTML = `<p class="waiting-text-search">No match results, <br> Try a different search</p>`;
+      } else {
+        generateFoodSearch(searchResult);
+      }
       console.log(searchResult);
-      generateFoodSearch(searchResult);
     })
     .catch((error) => {
       console.log(error);
@@ -86,7 +90,7 @@ const searchResultText = document.querySelector(".search-result-text");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const searchValue = searchBox.value;
+  var searchValue = searchBox.value;
   const container = document.querySelector(".container");
   searchResultText.innerHTML = `search results for "<b>${searchValue}</b>"...`;
   container.innerHTML = `<section class="waiting">

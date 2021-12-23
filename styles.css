@@ -257,6 +257,12 @@ nav ul li {
   transform: translateY(-30px);
   font-weight: 600;
 }
+.waiting-text-search {
+  color: rgb(77, 77, 77);
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
 @keyframes move {
   0% {
     left: 0;
