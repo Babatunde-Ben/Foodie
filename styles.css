@@ -26,7 +26,7 @@ a {
 .nav-header .logo {
   text-transform: capitalize;
   color: #fff;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: "Leckerli One", cursive;
 }
 nav ul {
@@ -403,7 +403,7 @@ nav ul li {
     position: relative;
   }
   .nav-header .logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .nav-header .menu-bar {
     color: #fff;
