@@ -51,7 +51,7 @@ function fetchFoodSearch(url) {
       const searchResult = data.searchResults[0].results;
       if (searchResult.length === 0) {
         console.log(`empty search`);
-        container.innerHTML = `<p class="waiting-text-search">No match results, <br> Try a different search</p>`;
+        container.innerHTML = `<p class="waiting-text-search">No matching results, <br> Try a different search</p>`;
       } else {
         generateFoodSearch(searchResult);
       }
