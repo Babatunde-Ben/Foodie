@@ -120,7 +120,7 @@ nav ul li {
   text-transform: capitalize;
   color: #333;
   font-size: 1.57em;
-  padding-bottom: 1rem;
+  padding-bottom: 0.7rem;
   position: relative;
 }
 .title::after {
@@ -404,7 +404,6 @@ nav ul li {
   .nav-header {
     padding: 1rem 1rem;
     position: relative;
-    /* overflow: hidden; */
   }
   .nav-header .logo {
     font-size: 1.5rem;
@@ -514,7 +513,6 @@ nav ul li {
   .section-center {
     padding: 28px 20px;
   }
-
   .food-container {
     flex-basis: 100%;
   }
