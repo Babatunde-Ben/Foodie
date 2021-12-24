@@ -363,9 +363,6 @@ nav ul li {
   font-family: Poppins, sans-serif;
 }
 
-/* set animation for status bar to view dynamically in javascript */
-/* set timeout for the status function */
-
 #status {
   color: #fff;
   text-align: center;

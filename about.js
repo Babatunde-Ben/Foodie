@@ -21,7 +21,17 @@ navLinks.forEach((item) => {
 // JS for leave a message form
 
 var contactForm = document.querySelector(".contact-form");
+var submitBtn = document.querySelector(".submit-btn");
+const btnPosition = submitBtn.offsetTop;
 
+// this function scrolls to the top of the button element
+function btnScroll() {
+  window.scrollTo({
+    left: 0,
+    top: btnPosition,
+  });
+}
+console.log(btnPosition);
 async function handleSubmit(event) {
   event.preventDefault();
   var status = document.getElementById("status");
@@ -37,10 +47,12 @@ async function handleSubmit(event) {
       status.classList.add("form-success");
       status.innerHTML = "Thanks for your submission!";
       contactForm.reset();
+      btnScroll();
     })
     .catch((error) => {
       status.classList.add("form-fail");
-      status.innerHTML = "Oops! There was a problem submitting your form";
+      status.innerHTML = "Oops! There was a problem";
+      btnScroll();
     });
 }
 contactForm.addEventListener("submit", handleSubmit);
