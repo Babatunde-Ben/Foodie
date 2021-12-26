@@ -160,6 +160,7 @@ nav ul li {
   padding: 1rem 0.5rem;
   /* height: 445px; */
   height: auto;
+  cursor: pointer;
 }
 .food-container:hover {
   transform: translateY(-5px);
@@ -207,7 +208,7 @@ nav ul li {
   text-align: center;
   width: 100%;
   text-decoration: underline;
-  cursor: pointer;
+  /* pointer-events: auto; */
 }
 .redirect {
   color: rgb(24, 54, 114);

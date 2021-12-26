@@ -29,7 +29,8 @@ function generateFood(fetchArray) {
     <h2 class="food-title">${title}</h2>
     <p class="desc">
     ${summary} 
-    </p><p class="read-more">Read more</p>
+    </p>
+    <a href="${spoonacularSourceUrl}" target="_blank" class="read-more">Read more</a>
   </div>
   </a>
   
@@ -38,7 +39,7 @@ function generateFood(fetchArray) {
   container.innerHTML = content.join("");
 }
 
-// generate food from spononacular API
+// generate food from spoonacular API
 
 window.addEventListener("DOMContentLoaded", fetchFood(url));
 
@@ -74,10 +75,8 @@ function generateFoodSearch(fetchArray) {
     <h2 class="food-title">${name}</h2>
     <p class="desc">
     ${content} 
-    </p><p class="read-more">Read more</p>
-  </div></a>
-  
-  `;
+    </p><a href="${link}" target="_blank" class="read-more">Read more</a>
+  </div></a>`;
   });
   container.innerHTML = content.join("");
 }
