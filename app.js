@@ -126,9 +126,3 @@ navLinks.forEach((item) => {
     nav.classList.remove("show-link");
   });
 });
-
-// JS for footer
-
-const currentYear = new Date().getFullYear();
-const year = document.querySelector(".year");
-year.textContent = currentYear;

@@ -56,9 +56,3 @@ async function handleSubmit(event) {
     });
 }
 contactForm.addEventListener("submit", handleSubmit);
-
-// JS for footer
-
-const currentYear = new Date().getFullYear();
-const year = document.querySelector(".year");
-year.textContent = currentYear;
