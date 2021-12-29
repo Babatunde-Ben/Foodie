@@ -2,12 +2,50 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: Poppins, sans-serif;
   background-color: #ede5df;
   min-height: 100vh;
+  position: relative;
+  /* height: 1000vh; */
+}
+.top {
+  position: fixed;
+  bottom: 8vh;
+  right: 20px;
+  z-index: 12;
+  border-radius: 50%;
+  color: white;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  display: none;
+  text-align: center;
+  background-color: #ff9100;
+  outline: none;
+  cursor: pointer;
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.top i {
+  font-size: 1.2rem;
+}
+.show-scroll {
+  display: inline-block;
 }
 a {
   text-decoration: none;
@@ -400,6 +438,9 @@ nav ul li {
 }
 
 @media screen and (max-width: 700px) {
+  body {
+    min-height: 100vh;
+  }
   .nav-header {
     padding: 0.8rem 1rem;
     position: relative;

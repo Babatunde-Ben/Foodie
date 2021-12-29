@@ -8,7 +8,6 @@ function fetchFood(url) {
     .then((res) => res.json())
     .then((data) => {
       const result = data.recipes;
-      // console.log(result);
       generateFood(result);
     })
     .catch((error) => {
@@ -48,15 +47,15 @@ window.addEventListener("DOMContentLoaded", fetchFood(url));
 function fetchFoodSearch(url) {
   fetch(url)
     .then((res) => res.json())
+    // .then(console.log(res.status))
     .then((data) => {
+      console.log(data.status);
       const searchResult = data.searchResults[0].results;
       if (searchResult.length === 0) {
-        console.log(`empty search`);
         container.innerHTML = `<p class="waiting-text-search">No matching results, <br> Try a different search</p>`;
       } else {
         generateFoodSearch(searchResult);
       }
-      console.log(searchResult);
     })
     .catch((error) => {
       console.log(error);
@@ -98,7 +97,6 @@ form.addEventListener("submit", (e) => {
     </div>
     <p class="waiting-text">waiting for results...</p>
   </section>`;
-  console.log(searchValue);
 
   url = `https://api.spoonacular.com/food/search?query=${searchValue}&number=9&apiKey=838b6353edcb4753a360558332db1166`;
 
@@ -124,4 +122,16 @@ navLinks.forEach((item) => {
   item.addEventListener("click", () => {
     nav.classList.remove("show-link");
   });
+});
+
+// JS for scroll back-to-top
+window.addEventListener("scroll", () => {
+  const scrollHeight = window.pageYOffset;
+  const topLink = document.querySelector(".top");
+
+  if (scrollHeight > 600) {
+    topLink.classList.add("show-scroll");
+  } else {
+    topLink.classList.remove("show-scroll");
+  }
 });
