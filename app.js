@@ -1,4 +1,6 @@
 const container = document.querySelector(".container");
+const loadMore = document.querySelector(".load-more-btn");
+
 let url = `https://api.spoonacular.com/recipes/random?number=9&tags=vegetarian&apiKey=838b6353edcb4753a360558332db1166`;
 
 // ------ for front page ------
@@ -9,6 +11,9 @@ function fetchFood(url) {
     .then((data) => {
       const result = data.recipes;
       generateFood(result);
+    })
+    .then(() => {
+      loadMore.classList.add("show-load");
     })
     .catch((error) => {
       console.log(error);
@@ -42,6 +47,11 @@ function generateFood(fetchArray) {
 
 window.addEventListener("DOMContentLoaded", fetchFood(url));
 
+// load more content
+loadMore.addEventListener("click", () => {
+  window.location.reload();
+});
+
 //------ for search page ------
 
 function fetchFoodSearch(url) {
@@ -49,7 +59,6 @@ function fetchFoodSearch(url) {
     .then((res) => res.json())
     // .then(console.log(res.status))
     .then((data) => {
-      console.log(data.status);
       const searchResult = data.searchResults[0].results;
       if (searchResult.length === 0) {
         container.innerHTML = `
@@ -61,6 +70,7 @@ function fetchFoodSearch(url) {
         generateFoodSearch(searchResult);
       }
     })
+
     .catch((error) => {
       console.log(error);
     });
