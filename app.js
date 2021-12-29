@@ -52,7 +52,11 @@ function fetchFoodSearch(url) {
       console.log(data.status);
       const searchResult = data.searchResults[0].results;
       if (searchResult.length === 0) {
-        container.innerHTML = `<p class="waiting-text-search">No matching results, <br> Try a different search</p>`;
+        container.innerHTML = `
+        <section class="waiting">
+        <i class="fas fa-search waiting-icon"></i>
+        <p class="waiting-text-search">No matching results, <br> Try a different search</p>
+        </section>`;
       } else {
         generateFoodSearch(searchResult);
       }
@@ -82,11 +86,11 @@ function generateFoodSearch(fetchArray) {
 
 // JS for search functionality
 
-const form = document.querySelector(".search-form");
+const searchForm = document.querySelector(".search-form");
 const searchBox = document.querySelector(".search-box");
 const searchResultText = document.querySelector(".search-result-text");
 
-form.addEventListener("submit", (e) => {
+searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   var searchValue = searchBox.value;
   const container = document.querySelector(".container");
@@ -99,9 +103,15 @@ form.addEventListener("submit", (e) => {
   </section>`;
 
   url = `https://api.spoonacular.com/food/search?query=${searchValue}&number=9&apiKey=838b6353edcb4753a360558332db1166`;
-
-  fetchFoodSearch(url);
-  form.reset();
+  if (navigator.onLine) {
+    fetchFoodSearch(url);
+  } else {
+    container.innerHTML = `
+    <section class="waiting">
+    <i class="fas fa-exclamation-triangle waiting-icon"></i><p class="waiting-text-search">Check your internet connection</p>
+    </section>`;
+  }
+  searchForm.reset();
 });
 
 // JS for responsive navbar
@@ -125,6 +135,7 @@ navLinks.forEach((item) => {
 });
 
 // JS for scroll back-to-top
+
 window.addEventListener("scroll", () => {
   const scrollHeight = window.pageYOffset;
   const topLink = document.querySelector(".top");

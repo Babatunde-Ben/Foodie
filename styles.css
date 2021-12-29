@@ -273,6 +273,7 @@ nav ul li {
   align-items: center;
   flex-direction: column;
 }
+
 .preloader {
   position: relative;
   overflow: hidden;
@@ -299,9 +300,16 @@ nav ul li {
 }
 .waiting-text-search {
   color: rgb(77, 77, 77);
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   text-align: center;
   font-weight: 600;
+  display: block;
+}
+.waiting-icon {
+  display: block;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  color: rgb(77, 77, 77);
 }
 @keyframes move {
   0% {
