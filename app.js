@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 const loadMore = document.querySelector(".load-more-btn");
 
-let url = `https://api.spoonacular.com/recipes/random?number=9&tags=vegetarian&apiKey=838b6353edcb4753a360558332db1166`;
+let url = `https://api.spoonacular.com/recipes/random?number=9&tags=vegetarian&apiKey=29081e75af344e7b9b3bdeedaf0a4589`;
 
 // ------ for front page ------
 
@@ -11,8 +11,7 @@ function fetchFood(url) {
     .then((data) => {
       const result = data.recipes;
       generateFood(result);
-    })
-    .then(() => {
+      // console.log(result);
       loadMore.classList.add("show-load");
     })
     .catch((error) => {
@@ -57,7 +56,6 @@ loadMore.addEventListener("click", () => {
 function fetchFoodSearch(url) {
   fetch(url)
     .then((res) => res.json())
-    // .then(console.log(res.status))
     .then((data) => {
       const searchResult = data.searchResults[0].results;
       if (searchResult.length === 0) {
@@ -66,7 +64,10 @@ function fetchFoodSearch(url) {
         <i class="fas fa-search waiting-icon"></i>
         <p class="waiting-text-search">No matching results, <br> Try a different search</p>
         </section>`;
+        loadMore.classList.remove("show-load");
       } else {
+        loadMore.classList.remove("show-load");
+
         generateFoodSearch(searchResult);
       }
     })
@@ -112,7 +113,7 @@ searchForm.addEventListener("submit", (e) => {
     <p class="waiting-text">waiting for results...</p>
   </section>`;
 
-  url = `https://api.spoonacular.com/food/search?query=${searchValue}&number=9&apiKey=838b6353edcb4753a360558332db1166`;
+  url = `https://api.spoonacular.com/food/search?query=${searchValue}&number=9&apiKey=29081e75af344e7b9b3bdeedaf0a4589`;
   if (navigator.onLine) {
     fetchFoodSearch(url);
   } else {
