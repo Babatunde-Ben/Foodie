@@ -1,23 +1,6 @@
 const container = document.querySelector(".container");
 const loadMore = document.querySelector(".load-more-btn");
-const banner = document.querySelector(".banner");
 const exploreBtn = document.querySelector(".explore-btn");
-
-// JS for banner
-
-let counter = 1;
-function switchBanner() {
-  counter++;
-
-  if (counter > 5) {
-    counter = 1;
-  }
-  // console.log(counter);
-  console.log(`cheking`);
-  banner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-  url(./images/bg-${counter}.jpg)`;
-}
-setInterval(switchBanner, 5000);
 
 // JS for explore button
 exploreBtn.addEventListener("click", () => {

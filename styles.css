@@ -114,8 +114,9 @@ nav ul li {
 }
 .banner {
   height: 70vh;
+  padding: 25px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(./images/bg-3.jpeg);
+    url(./images/bg-5.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -590,9 +591,12 @@ nav ul li {
   }
   .banner .catch-phrase {
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     line-height: 2.5rem;
     border-bottom: 3px solid #ff9100;
+  }
+  .catch-phrase::first-letter {
+    font-size: 3.5rem;
   }
   .banner .explore-btn {
     font-size: 0.8rem;
@@ -638,6 +642,25 @@ nav ul li {
   }
 }
 @media screen and (max-width: 500px) {
+  .banner {
+    height: 50vh;
+    padding: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(./images/small-bg-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .banner .catch-phrase {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.8rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 3px solid #ff9100;
+  }
+  .catch-phrase::first-letter {
+    font-size: 2.2rem;
+  }
   .section-center {
     padding: 28px 20px;
   }
