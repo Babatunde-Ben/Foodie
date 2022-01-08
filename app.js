@@ -1,5 +1,64 @@
 const container = document.querySelector(".container");
 const loadMore = document.querySelector(".load-more-btn");
+const banner = document.querySelector(".banner");
+const exploreBtn = document.querySelector(".explore-btn");
+
+// JS for banner
+
+let counter = 1;
+function switchBanner() {
+  counter++;
+
+  if (counter > 5) {
+    counter = 1;
+  }
+  // console.log(counter);
+  console.log(`cheking`);
+  banner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  url(./images/bg-${counter}.jpg)`;
+}
+setInterval(switchBanner, 5000);
+
+// JS for explore button
+exploreBtn.addEventListener("click", () => {
+  window.scrollTo({
+    left: 0,
+    top: container.offsetTop,
+  });
+});
+
+// JS for responsive navbar
+
+const openMenu = document.querySelector(".menu-bar");
+const closeMenu = document.querySelector(".close");
+const nav = document.querySelector(".nav-header nav");
+const navLinks = document.querySelectorAll(".nav-links");
+
+openMenu.addEventListener("click", () => {
+  nav.classList.add("show-link");
+});
+closeMenu.addEventListener("click", (e) => {
+  nav.classList.remove("show-link");
+});
+
+navLinks.forEach((item) => {
+  item.addEventListener("click", () => {
+    nav.classList.remove("show-link");
+  });
+});
+
+// JS for scroll back-to-top
+
+window.addEventListener("scroll", () => {
+  const scrollHeight = window.pageYOffset;
+  const topLink = document.querySelector(".top");
+
+  if (scrollHeight > 600) {
+    topLink.classList.add("show-scroll");
+  } else {
+    topLink.classList.remove("show-scroll");
+  }
+});
 
 let url = `https://api.spoonacular.com/recipes/random?number=9&tags=vegetarian&apiKey=29081e75af344e7b9b3bdeedaf0a4589`;
 
@@ -44,7 +103,7 @@ function generateFood(fetchArray) {
 
 // generate food from spoonacular API
 
-window.addEventListener("DOMContentLoaded", fetchFood(url));
+// window.addEventListener("DOMContentLoaded", fetchFood(url));
 
 // load more content
 loadMore.addEventListener("click", () => {
@@ -123,37 +182,4 @@ searchForm.addEventListener("submit", (e) => {
     </section>`;
   }
   searchForm.reset();
-});
-
-// JS for responsive navbar
-
-const openMenu = document.querySelector(".menu-bar");
-const closeMenu = document.querySelector(".close");
-const nav = document.querySelector(".nav-header nav");
-const navLinks = document.querySelectorAll(".nav-links");
-
-openMenu.addEventListener("click", () => {
-  nav.classList.add("show-link");
-});
-closeMenu.addEventListener("click", (e) => {
-  nav.classList.remove("show-link");
-});
-
-navLinks.forEach((item) => {
-  item.addEventListener("click", () => {
-    nav.classList.remove("show-link");
-  });
-});
-
-// JS for scroll back-to-top
-
-window.addEventListener("scroll", () => {
-  const scrollHeight = window.pageYOffset;
-  const topLink = document.querySelector(".top");
-
-  if (scrollHeight > 600) {
-    topLink.classList.add("show-scroll");
-  } else {
-    topLink.classList.remove("show-scroll");
-  }
 });

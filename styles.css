@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Carattere&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -59,7 +60,7 @@ a {
   align-items: center;
   padding: 1rem 3rem;
   box-shadow: 0px 0px 15px black;
-  margin-bottom: 1.8rem;
+  /* margin-bottom: 1.8rem; */
 }
 .nav-header .logo {
   text-transform: capitalize;
@@ -110,6 +111,56 @@ nav ul li {
 }
 .nav-header .close {
   display: none;
+}
+.banner {
+  height: 70vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/bg-3.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+.banner .catch-phrase {
+  color: white;
+  font-size: 3rem;
+  /* font-weight: 600; */
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  padding-bottom: 0.5rem;
+  text-shadow: 0px 0px 15px black;
+  text-transform: capitalize;
+  line-height: 3.5rem;
+  text-align: center;
+  font-family: "Carattere", cursive;
+  border-bottom: 5px solid #ff9100;
+}
+.catch-phrase::first-letter {
+  font-size: 4.5rem;
+}
+.banner .explore-btn {
+  background-color: #ff9100;
+  color: #fff;
+  border-radius: 15px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 6px 35px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.5);
+  font-family: Poppins, sans-serif;
+}
+.banner .explore-btn:hover {
+  background-color: #e68506;
 }
 
 .section-center {
@@ -536,6 +587,16 @@ nav ul li {
   }
   .close:hover {
     transform: rotate(90deg);
+  }
+  .banner .catch-phrase {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    line-height: 2.5rem;
+    border-bottom: 3px solid #ff9100;
+  }
+  .banner .explore-btn {
+    font-size: 0.8rem;
+    padding: 6px 30px;
   }
   .section-center {
     padding: 28px 70px;
