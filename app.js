@@ -1,12 +1,13 @@
 const container = document.querySelector(".container");
 const loadMore = document.querySelector(".load-more-btn");
 const exploreBtn = document.querySelector(".explore-btn");
+const catalogueTitle = document.querySelector(".catalogue-title");
 
 // JS for explore button
 exploreBtn.addEventListener("click", () => {
   window.scrollTo({
     left: 0,
-    top: container.offsetTop,
+    top: catalogueTitle.offsetTop - 10,
   });
 });
 
