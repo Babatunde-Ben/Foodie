@@ -44,7 +44,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-let url = `https://api.spoonacular.com/recipes/random?number=9&tags=vegetarian&apiKey=29081e75af344e7b9b3bdeedaf0a4589`;
+let url = `https://api.spoonacular.com/recipes/random?number=9&tags=lunch&apiKey=29081e75af344e7b9b3bdeedaf0a4589`;
 
 // ------ for front page ------
 
