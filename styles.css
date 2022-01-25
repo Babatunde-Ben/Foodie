@@ -658,7 +658,7 @@ nav ul li {
     margin-bottom: 2rem;
     line-height: 1.8rem;
     padding-bottom: 0.3rem;
-    border-bottom: 3px solid #ff9100;
+    border-bottom: 1px solid #ff9100;
   }
   .catch-phrase::first-letter {
     font-size: 2.2rem;
