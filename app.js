@@ -87,7 +87,7 @@ function generateFood(fetchArray) {
 
 // generate food from spoonacular API
 
-window.addEventListener("DOMContentLoaded", fetchFood(url));
+// window.addEventListener("DOMContentLoaded", fetchFood(url));
 
 // load more content
 loadMore.addEventListener("click", () => {
