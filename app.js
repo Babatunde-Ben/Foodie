@@ -7,7 +7,7 @@ const catalogueTitle = document.querySelector(".catalogue-title");
 exploreBtn.addEventListener("click", () => {
   window.scrollTo({
     left: 0,
-    top: catalogueTitle.offsetTop - 10,
+    top: catalogueTitle.offsetTop - 20,
   });
 });
 
@@ -91,7 +91,9 @@ window.addEventListener("DOMContentLoaded", fetchFood(url));
 
 // load more content
 loadMore.addEventListener("click", () => {
-  window.location.reload();
+  // window.location.reload();
+  fetchFood(url);
+  window.scrollTo({ top: catalogueTitle.offsetTop - 20, left: 0 });
 });
 
 //------ for search page ------
@@ -167,3 +169,7 @@ searchForm.addEventListener("submit", (e) => {
   }
   searchForm.reset();
 });
+
+//  update copyright
+const footerYear = document.querySelector(".footer-year");
+footerYear.textContent = new Date().getFullYear();
