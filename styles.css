@@ -321,7 +321,6 @@ nav ul li {
   margin-top: 40px;
 }
 .footer p {
-  font-size: 0.8rem;
   color: #acacac;
 }
 .footer-social {
@@ -694,8 +693,5 @@ nav ul li {
   .section-center .title {
     font-size: 1rem;
     max-width: 180px;
-  }
-  .footer p {
-    font-size: 0.7rem;
   }
 }
